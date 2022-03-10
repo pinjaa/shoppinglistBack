@@ -11,7 +11,7 @@ try {
     
     $query = $db->prepare('insert into item(description,amount) values (:description,:amount)');
     $query->bindValue(':description',$description,PDO::PARAM_STR);
-    $query->bindValue(':amount',$amount,PDO::PARAM_STR);
+    $query->bindValue(':amount',$amount,PDO::PARAM_INT);
     $query->execute();
 
     header('HTTP/1.1 200 OK');
